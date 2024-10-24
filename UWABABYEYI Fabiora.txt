@@ -1,0 +1,175 @@
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 102
+Server version: 8.3.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> USE RUHANDE;
+Database changed
+mysql> SELECT *FROM NGOMA;
++------------+---------+---------+--------+----------+----------+--------+--------+---------+------------+--------------------------+
+| ID_NO      | FNAME   | LNAME   | GENDER | PROVINCE | DISTRICT | SECTOR | CELL   | VILLAGE | TELEPHONE  | EMAIL                    |
++------------+---------+---------+--------+----------+----------+--------+--------+---------+------------+--------------------------+
+| 2147483647 | MUNEZA  | CLOUDE  | MALE   | SOUTH    | HUYE     | MUKURA | RANGO  | CYARWA  | 0788976545 | CLOUDEMUNEZA@GMAIL.COM   |
+| 2147483647 | RUGWIRO | MONIQUE | FEMALE | EAST     | NGOMA    | MUSHA  | SAKE   | GITWE   | 0798765434 | RUGWIROMONIQUE@GMAIL.COM |
+| 2147483647 | FEZA    | ANNE    | FEMALE | SOUTH    | BURERA   | RORERO | TABA   | GESHI   | 0788899776 | ANNEFEZA@GMAIL.COM       |
+| 2147483647 | CYIZA   | BLAIZE  | MALE   | WEST     | RUBAVU   | CYUVE  | NSINDA | TOBO    | 0799876543 | BLAIZECYIZA@GMAIL.COM    |
++------------+---------+---------+--------+----------+----------+--------+--------+---------+------------+--------------------------+
+4 rows in set (0.02 sec)
+
+mysql> INSERT INTO NGOMA VALUES('1196787678987654','MUCYO','KIM','MALE','NORTH','MUSANZE','BUGESHI','HOBE','TUZE','0786754348','KIMMUCYO@GMAIL.COM');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('1209876543234567','HIRWA','NELLY','WEST','RUTSIRO','MUKUNGWA','JENDA','JALI','0791122334','NELLYHIRWA@GMAIL.COM');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> INSERT INTO NGOMA VALUES('1209876543234567','HIRWA','NELLY','MALE','WEST','RUTSIRO','MUKUNGWA','JENDA','JALI','0791122334','NELLYHIRWA@GMAIL.COM');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('1908976543223456','CYEZA','ANGE','FEMALE','SOUTH','GAKENKE','RWAZA','HANIKA','SIMBA','0786767543','ANGECYEZA@GMAIL.COM');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('1987878656543213','KAMANA','ANDRE','MALE','EAST','KAYONZA','MUSHA','RUKARA','SHANGI','0788889906','ANDREKAMANA@GMAIL.COM';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> INSERT INTO NGOMA VALUES('1987878656543213','KAMANA','ANDRE','MALE','EAST','KAYONZA','MUSHA','RUKARA','SHANGI','0788889906','ANDREKAMANA@GMAIL.COM');
+Query OK, 1 row affected, 1 warning (0.01 sec)
+
+mysql> INSERT INTO NGOMA VALUES('1998887654330099','KALISA','JOHN','MALE','NORTH','NYANZA','NKINGO','RULI','TOBO','0799965754','JOHNKALISA@GMAIL.COM');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('19087767678999008','RUMULI','DINAH','FEMALE','WEST','RUSIZI','KAMEMBE','MULINDI','NKOMBO','0791212334','DINAHRUMULI@GMAIL.COM');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> SELECT *FROM NGOMA;
++------------+---------+---------+--------+----------+----------+----------+---------+---------+------------+--------------------------+
+| ID_NO      | FNAME   | LNAME   | GENDER | PROVINCE | DISTRICT | SECTOR   | CELL    | VILLAGE | TELEPHONE  | EMAIL                    |
++------------+---------+---------+--------+----------+----------+----------+---------+---------+------------+--------------------------+
+| 2147483647 | MUNEZA  | CLOUDE  | MALE   | SOUTH    | HUYE     | MUKURA   | RANGO   | CYARWA  | 0788976545 | CLOUDEMUNEZA@GMAIL.COM   |
+| 2147483647 | RUGWIRO | MONIQUE | FEMALE | EAST     | NGOMA    | MUSHA    | SAKE    | GITWE   | 0798765434 | RUGWIROMONIQUE@GMAIL.COM |
+| 2147483647 | FEZA    | ANNE    | FEMALE | SOUTH    | BURERA   | RORERO   | TABA    | GESHI   | 0788899776 | ANNEFEZA@GMAIL.COM       |
+| 2147483647 | CYIZA   | BLAIZE  | MALE   | WEST     | RUBAVU   | CYUVE    | NSINDA  | TOBO    | 0799876543 | BLAIZECYIZA@GMAIL.COM    |
+| 2147483647 | MUCYO   | KIM     | MALE   | NORTH    | MUSANZE  | BUGESHI  | HOBE    | TUZE    | 0786754348 | KIMMUCYO@GMAIL.COM       |
+| 2147483647 | HIRWA   | NELLY   | MALE   | WEST     | RUTSIRO  | MUKUNGWA | JENDA   | JALI    | 0791122334 | NELLYHIRWA@GMAIL.COM     |
+| 2147483647 | CYEZA   | ANGE    | FEMALE | SOUTH    | GAKENKE  | RWAZA    | HANIKA  | SIMBA   | 0786767543 | ANGECYEZA@GMAIL.COM      |
+| 2147483647 | KAMANA  | ANDRE   | MALE   | EAST     | KAYONZA  | MUSHA    | RUKARA  | SHANGI  | 0788889906 | ANDREKAMANA@GMAIL.COM    |
+| 2147483647 | KALISA  | JOHN    | MALE   | NORTH    | NYANZA   | NKINGO   | RULI    | TOBO    | 0799965754 | JOHNKALISA@GMAIL.COM     |
+| 2147483647 | RUMULI  | DINAH   | FEMALE | WEST     | RUSIZI   | KAMEMBE  | MULINDI | NKOMBO  | 0791212334 | DINAHRUMULI@GMAIL.COM    |
++------------+---------+---------+--------+----------+----------+----------+---------+---------+------------+--------------------------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA ADD COUNTRY CHAR(10);
+Query OK, 10 rows affected (0.05 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT *FROM NGOMA;
++------------+---------+---------+--------+----------+----------+----------+---------+---------+------------+--------------------------+---------+
+| ID_NO      | FNAME   | LNAME   | GENDER | PROVINCE | DISTRICT | SECTOR   | CELL    | VILLAGE | TELEPHONE  | EMAIL                    | COUNTRY |
++------------+---------+---------+--------+----------+----------+----------+---------+---------+------------+--------------------------+---------+
+| 2147483647 | MUNEZA  | CLOUDE  | MALE   | SOUTH    | HUYE     | MUKURA   | RANGO   | CYARWA  | 0788976545 | CLOUDEMUNEZA@GMAIL.COM   | NULL    |
+| 2147483647 | RUGWIRO | MONIQUE | FEMALE | EAST     | NGOMA    | MUSHA    | SAKE    | GITWE   | 0798765434 | RUGWIROMONIQUE@GMAIL.COM | NULL    |
+| 2147483647 | FEZA    | ANNE    | FEMALE | SOUTH    | BURERA   | RORERO   | TABA    | GESHI   | 0788899776 | ANNEFEZA@GMAIL.COM       | NULL    |
+| 2147483647 | CYIZA   | BLAIZE  | MALE   | WEST     | RUBAVU   | CYUVE    | NSINDA  | TOBO    | 0799876543 | BLAIZECYIZA@GMAIL.COM    | NULL    |
+| 2147483647 | MUCYO   | KIM     | MALE   | NORTH    | MUSANZE  | BUGESHI  | HOBE    | TUZE    | 0786754348 | KIMMUCYO@GMAIL.COM       | NULL    |
+| 2147483647 | HIRWA   | NELLY   | MALE   | WEST     | RUTSIRO  | MUKUNGWA | JENDA   | JALI    | 0791122334 | NELLYHIRWA@GMAIL.COM     | NULL    |
+| 2147483647 | CYEZA   | ANGE    | FEMALE | SOUTH    | GAKENKE  | RWAZA    | HANIKA  | SIMBA   | 0786767543 | ANGECYEZA@GMAIL.COM      | NULL    |
+| 2147483647 | KAMANA  | ANDRE   | MALE   | EAST     | KAYONZA  | MUSHA    | RUKARA  | SHANGI  | 0788889906 | ANDREKAMANA@GMAIL.COM    | NULL    |
+| 2147483647 | KALISA  | JOHN    | MALE   | NORTH    | NYANZA   | NKINGO   | RULI    | TOBO    | 0799965754 | JOHNKALISA@GMAIL.COM     | NULL    |
+| 2147483647 | RUMULI  | DINAH   | FEMALE | WEST     | RUSIZI   | KAMEMBE  | MULINDI | NKOMBO  | 0791212334 | DINAHRUMULI@GMAIL.COM    | NULL    |
++------------+---------+---------+--------+----------+----------+----------+---------+---------+------------+--------------------------+---------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA COUNTRY='RWANDA' WHERE FNAME='MUNEZA';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'COUNTRY='RWANDA' WHERE FNAME='MUNEZA'' at line 1
+mysql> ALTER NGOMA COUNTRY='RWANDA' WHERE FNAME='MUNEZA';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'NGOMA COUNTRY='RWANDA' WHERE FNAME='MUNEZA'' at line 1
+mysql> UPDATE NGOMA COUNTRY='RWANDA' WHERE FNAME='MUNEZA';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='RWANDA' WHERE FNAME='MUNEZA'' at line 1
+mysql> UPDATE TABLE NGOMA COUNTRY='RWANDA' WHERE FNAME='MUNEZA';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'TABLE NGOMA COUNTRY='RWANDA' WHERE FNAME='MUNEZA'' at line 1
+mysql> ALTER TABLE NGOMA DROP VILLAGE;
+Query OK, 10 rows affected (0.04 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT *FROM NGOMA;
++------------+---------+---------+--------+----------+----------+----------+---------+------------+--------------------------+---------+
+| ID_NO      | FNAME   | LNAME   | GENDER | PROVINCE | DISTRICT | SECTOR   | CELL    | TELEPHONE  | EMAIL                    | COUNTRY |
++------------+---------+---------+--------+----------+----------+----------+---------+------------+--------------------------+---------+
+| 2147483647 | MUNEZA  | CLOUDE  | MALE   | SOUTH    | HUYE     | MUKURA   | RANGO   | 0788976545 | CLOUDEMUNEZA@GMAIL.COM   | NULL    |
+| 2147483647 | RUGWIRO | MONIQUE | FEMALE | EAST     | NGOMA    | MUSHA    | SAKE    | 0798765434 | RUGWIROMONIQUE@GMAIL.COM | NULL    |
+| 2147483647 | FEZA    | ANNE    | FEMALE | SOUTH    | BURERA   | RORERO   | TABA    | 0788899776 | ANNEFEZA@GMAIL.COM       | NULL    |
+| 2147483647 | CYIZA   | BLAIZE  | MALE   | WEST     | RUBAVU   | CYUVE    | NSINDA  | 0799876543 | BLAIZECYIZA@GMAIL.COM    | NULL    |
+| 2147483647 | MUCYO   | KIM     | MALE   | NORTH    | MUSANZE  | BUGESHI  | HOBE    | 0786754348 | KIMMUCYO@GMAIL.COM       | NULL    |
+| 2147483647 | HIRWA   | NELLY   | MALE   | WEST     | RUTSIRO  | MUKUNGWA | JENDA   | 0791122334 | NELLYHIRWA@GMAIL.COM     | NULL    |
+| 2147483647 | CYEZA   | ANGE    | FEMALE | SOUTH    | GAKENKE  | RWAZA    | HANIKA  | 0786767543 | ANGECYEZA@GMAIL.COM      | NULL    |
+| 2147483647 | KAMANA  | ANDRE   | MALE   | EAST     | KAYONZA  | MUSHA    | RUKARA  | 0788889906 | ANDREKAMANA@GMAIL.COM    | NULL    |
+| 2147483647 | KALISA  | JOHN    | MALE   | NORTH    | NYANZA   | NKINGO   | RULI    | 0799965754 | JOHNKALISA@GMAIL.COM     | NULL    |
+| 2147483647 | RUMULI  | DINAH   | FEMALE | WEST     | RUSIZI   | KAMEMBE  | MULINDI | 0791212334 | DINAHRUMULI@GMAIL.COM    | NULL    |
++------------+---------+---------+--------+----------+----------+----------+---------+------------+--------------------------+---------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT FNAME,GENDER,DISTRICT,PROVINCE,TELEPHONE,COUNTRY FROM NGOMA;
++---------+--------+----------+----------+------------+---------+
+| FNAME   | GENDER | DISTRICT | PROVINCE | TELEPHONE  | COUNTRY |
++---------+--------+----------+----------+------------+---------+
+| MUNEZA  | MALE   | HUYE     | SOUTH    | 0788976545 | NULL    |
+| RUGWIRO | FEMALE | NGOMA    | EAST     | 0798765434 | NULL    |
+| FEZA    | FEMALE | BURERA   | SOUTH    | 0788899776 | NULL    |
+| CYIZA   | MALE   | RUBAVU   | WEST     | 0799876543 | NULL    |
+| MUCYO   | MALE   | MUSANZE  | NORTH    | 0786754348 | NULL    |
+| HIRWA   | MALE   | RUTSIRO  | WEST     | 0791122334 | NULL    |
+| CYEZA   | FEMALE | GAKENKE  | SOUTH    | 0786767543 | NULL    |
+| KAMANA  | MALE   | KAYONZA  | EAST     | 0788889906 | NULL    |
+| KALISA  | MALE   | NYANZA   | NORTH    | 0799965754 | NULL    |
+| RUMULI  | FEMALE | RUSIZI   | WEST     | 0791212334 | NULL    |
++---------+--------+----------+----------+------------+---------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATE NGOMA SET COUNTRY='RWANDA'WHERE FNAME='MUNEZA';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT *FROM NGOMA;
++------------+---------+---------+--------+----------+----------+----------+---------+------------+--------------------------+---------+
+| ID_NO      | FNAME   | LNAME   | GENDER | PROVINCE | DISTRICT | SECTOR   | CELL    | TELEPHONE  | EMAIL                    | COUNTRY |
++------------+---------+---------+--------+----------+----------+----------+---------+------------+--------------------------+---------+
+| 2147483647 | MUNEZA  | CLOUDE  | MALE   | SOUTH    | HUYE     | MUKURA   | RANGO   | 0788976545 | CLOUDEMUNEZA@GMAIL.COM   | RWANDA  |
+| 2147483647 | RUGWIRO | MONIQUE | FEMALE | EAST     | NGOMA    | MUSHA    | SAKE    | 0798765434 | RUGWIROMONIQUE@GMAIL.COM | NULL    |
+| 2147483647 | FEZA    | ANNE    | FEMALE | SOUTH    | BURERA   | RORERO   | TABA    | 0788899776 | ANNEFEZA@GMAIL.COM       | NULL    |
+| 2147483647 | CYIZA   | BLAIZE  | MALE   | WEST     | RUBAVU   | CYUVE    | NSINDA  | 0799876543 | BLAIZECYIZA@GMAIL.COM    | NULL    |
+| 2147483647 | MUCYO   | KIM     | MALE   | NORTH    | MUSANZE  | BUGESHI  | HOBE    | 0786754348 | KIMMUCYO@GMAIL.COM       | NULL    |
+| 2147483647 | HIRWA   | NELLY   | MALE   | WEST     | RUTSIRO  | MUKUNGWA | JENDA   | 0791122334 | NELLYHIRWA@GMAIL.COM     | NULL    |
+| 2147483647 | CYEZA   | ANGE    | FEMALE | SOUTH    | GAKENKE  | RWAZA    | HANIKA  | 0786767543 | ANGECYEZA@GMAIL.COM      | NULL    |
+| 2147483647 | KAMANA  | ANDRE   | MALE   | EAST     | KAYONZA  | MUSHA    | RUKARA  | 0788889906 | ANDREKAMANA@GMAIL.COM    | NULL    |
+| 2147483647 | KALISA  | JOHN    | MALE   | NORTH    | NYANZA   | NKINGO   | RULI    | 0799965754 | JOHNKALISA@GMAIL.COM     | NULL    |
+| 2147483647 | RUMULI  | DINAH   | FEMALE | WEST     | RUSIZI   | KAMEMBE  | MULINDI | 0791212334 | DINAHRUMULI@GMAIL.COM    | NULL    |
++------------+---------+---------+--------+----------+----------+----------+---------+------------+--------------------------+---------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA DROP COUNTRY;
+Query OK, 10 rows affected (0.04 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT *FROM NGOMA;
++------------+---------+---------+--------+----------+----------+----------+---------+------------+--------------------------+
+| ID_NO      | FNAME   | LNAME   | GENDER | PROVINCE | DISTRICT | SECTOR   | CELL    | TELEPHONE  | EMAIL                    |
++------------+---------+---------+--------+----------+----------+----------+---------+------------+--------------------------+
+| 2147483647 | MUNEZA  | CLOUDE  | MALE   | SOUTH    | HUYE     | MUKURA   | RANGO   | 0788976545 | CLOUDEMUNEZA@GMAIL.COM   |
+| 2147483647 | RUGWIRO | MONIQUE | FEMALE | EAST     | NGOMA    | MUSHA    | SAKE    | 0798765434 | RUGWIROMONIQUE@GMAIL.COM |
+| 2147483647 | FEZA    | ANNE    | FEMALE | SOUTH    | BURERA   | RORERO   | TABA    | 0788899776 | ANNEFEZA@GMAIL.COM       |
+| 2147483647 | CYIZA   | BLAIZE  | MALE   | WEST     | RUBAVU   | CYUVE    | NSINDA  | 0799876543 | BLAIZECYIZA@GMAIL.COM    |
+| 2147483647 | MUCYO   | KIM     | MALE   | NORTH    | MUSANZE  | BUGESHI  | HOBE    | 0786754348 | KIMMUCYO@GMAIL.COM       |
+| 2147483647 | HIRWA   | NELLY   | MALE   | WEST     | RUTSIRO  | MUKUNGWA | JENDA   | 0791122334 | NELLYHIRWA@GMAIL.COM     |
+| 2147483647 | CYEZA   | ANGE    | FEMALE | SOUTH    | GAKENKE  | RWAZA    | HANIKA  | 0786767543 | ANGECYEZA@GMAIL.COM      |
+| 2147483647 | KAMANA  | ANDRE   | MALE   | EAST     | KAYONZA  | MUSHA    | RUKARA  | 0788889906 | ANDREKAMANA@GMAIL.COM    |
+| 2147483647 | KALISA  | JOHN    | MALE   | NORTH    | NYANZA   | NKINGO   | RULI    | 0799965754 | JOHNKALISA@GMAIL.COM     |
+| 2147483647 | RUMULI  | DINAH   | FEMALE | WEST     | RUSIZI   | KAMEMBE  | MULINDI | 0791212334 | DINAHRUMULI@GMAIL.COM    |
++------------+---------+---------+--------+----------+----------+----------+---------+------------+--------------------------+
+10 rows in set (0.00 sec)
+
+mysql>
